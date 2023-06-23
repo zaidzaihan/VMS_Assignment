@@ -1,0 +1,49 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+    "identification_No": "ABC123",
+    "password": "pa55w0rd",
+    "room_number": "A203",
+    "name": "John Doe",
+    "gender": "Male",
+    "ethnicity": "Caucasian",
+    "temperature": "98.6",
+    "dateofbirth": "1985-09-10",
+    "citizenship": "USA",
+    "document_type": "ID",
+    "expiryDate": "2028-06-30",
+    "address": "123 Main St",
+    "town": "Cityville",
+    "postcode": "12345",
+    "state": "California",
+    "country": "United States",
+    "phone_number": "123-456-7890",
+    "vehicle_number": "ABC-1234",
+    "vehicle_type": "Sedan",
+    "visitor_category": "Business",
+    "preregistered_pass": "Yes",
+    "fever": "No",
+    "sore_throat": "No",
+    "dry_cough": "Yes",
+    "runny_nose": "No",
+    "shortness_of_breath": "No",
+    "body_ache": "Yes",
+    "travelled_oversea_last_14_days": "No",
+    "contact_with_person_with_Covid_19": "No",
+    "recovered_from_covid_19": "Yes",
+    "covid_19_test": "Yes",
+    "date": "2023-06-20"
+}
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+"identification_No": "12345678",
+"password": "12345678",
+"visitor_category": "Admin"
+}
