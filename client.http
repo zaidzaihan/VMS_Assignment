@@ -1,17 +1,16 @@
-POST http://localhost:3000/register
+POST http://localhost:3000/user/registerVisitor
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWNhdGlvbl9ObyI6IjEyMzQ1Iiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjg3OTY3NTc1fQ.qbE_TZixnEsXzAoJuDMJClVDPyjvTZGtiKNvhxbphyM
 
 {
-    "identification_No": "ABC123",
-    "password": "pa55w0rd",
-    "room_number": "A203",
-    "name": "John Doe",
+    "identification_No": "1315",
+    "name": "Dr. Azaril Amir",
+    "password": "123",
     "gender": "Male",
-    "ethnicity": "Caucasian",
-    "temperature": "98.6",
-    "dateofbirth": "1985-09-10",
-    "citizenship": "USA",
+    "ethnicity": "Malay",
+    "temperature": "37",
+    "dateofbirth": "-",
+    "citizenship": "Malaysia",
     "document_type": "ID",
     "expiryDate": "2028-06-30",
     "address": "123 Main St",
@@ -22,14 +21,26 @@ Authorization: Bearer
     "phone_number": "123-456-7890",
     "vehicle_number": "ABC-1234",
     "vehicle_type": "Sedan",
-    "visitor_category": "Business",
+    "visitor_category": "Guest",
     "preregistered_pass": "Yes",
+    "no_of_visitors": "1",
+    "purpose_of_visit": "Project Disussion",
+    "visit_limit_hrs": "2",
+    "visit_limit_min": "30",
+    "To_meet": "CEO",
+    "Host_Information": "Dato' Azaril Afiq",
+    "Location_or_department": "A-2",
+    "Unit_no": "A12",
+    "Location_Information": "Near Bonsai Tree",
+    "Permit_number" : "1234",
+    "Delivery_Order": "1234",
+    "Remarks": "None",
     "fever": "No",
     "sore_throat": "No",
     "dry_cough": "Yes",
     "runny_nose": "No",
     "shortness_of_breath": "No",
-    "body_ache": "Yes",
+    "body_ache": "No",
     "travelled_oversea_last_14_days": "No",
     "contact_with_person_with_Covid_19": "No",
     "recovered_from_covid_19": "Yes",
@@ -39,11 +50,115 @@ Authorization: Bearer
 
 ###
 
-POST http://localhost:3000/login/
+POST http://localhost:3000/user/login/
 Content-Type: application/json
 
 {
-"identification_No": "12345678",
-"password": "12345678",
-"visitor_category": "Admin"
+    "identification_No": "12345",
+    "password": "12345"
 }
+
+###
+
+POST http://localhost:3000/user/logout/
+Content-Type: application/json
+
+{
+    "identification_No": "12345",
+    "password": "12345"
+}
+
+
+###
+
+
+
+POST http://localhost:3000/visitor/login/
+Content-Type: application/json
+
+{
+    "identification_No": "1315",
+    "password": "123"
+}
+
+
+###
+
+POST http://localhost:3000/visitor/logout/
+Content-Type: application/json
+
+{
+    "identification_No": "1315"
+}
+
+###
+
+
+POST http://localhost:3000/user/view/visitor/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWNhdGlvbl9ObyI6IjEzMTUiLCJyb2xlIjoiR3Vlc3QiLCJpYXQiOjE2ODc5Njc5Njl9.OLZdl3LuQdEyjpYuj-o5HnqgdLTgJVBETsu_-YRMG5s
+
+###
+
+
+DELETE http://localhost:3000/deleteVisitors/1315/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWNhdGlvbl9ObyI6IjEyMzQ1Iiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjg3OTY4MDEyfQ.5Sx0iro5nXBqgtjcEmEGiqZoLp63ANKi5fw2NA9yxQ8
+Content-Type: application/json
+
+
+###
+
+
+POST http://localhost:3000/user/updateVisitor/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWNhdGlvbl9ObyI6IjEyMzQ1Iiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjg3OTY4MjM3fQ.Gacv51XhxMHjKnFrNiTMOGiyhjaTKzbE5Tvijoe32LU
+Content-Type: application/json
+
+{
+    "identification_No": "1315",
+    "name": "Dr. Haziq Hanafi",
+    "gender": "Male",
+    "ethnicity": "Malay",
+    "temperature": "37",
+    "dateofbirth": "-",
+    "citizenship": "Malaysia",
+    "document_type": "ID",
+    "expiryDate": "2028-06-30",
+    "address": "123 Main St",
+    "town": "Cityville",
+    "postcode": "12345",
+    "state": "California",
+    "country": "United States",
+    "phone_number": "123-456-7890",
+    "vehicle_number": "ABC-1234",
+    "vehicle_type": "Sedan",
+    "visitor_category": "Guest",
+    "preregistered_pass": "Yes",
+    "no_of_visitors": "1",
+    "purpose_of_visit": "Project Disussion",
+    "visit_limit_hrs": "2",
+    "visit_limit_min": "30",
+    "To_meet": "CEO",
+    "Host_Information": "Dato' Azaril Afiq",
+    "Location_or_department": "A-2",
+    "Unit_no": "A12",
+    "Location_Information": "Near Bonsai Tree",
+    "Permit_number" : "1234",
+    "Delivery_Order": "1234",
+    "Remarks": "None",
+    "fever": "No",
+    "sore_throat": "No",
+    "dry_cough": "Yes",
+    "runny_nose": "No",
+    "shortness_of_breath": "No",
+    "body_ache": "No",
+    "travelled_oversea_last_14_days": "No",
+    "contact_with_person_with_Covid_19": "No",
+    "recovered_from_covid_19": "Yes",
+    "covid_19_test": "Yes",
+    "date": "2023-06-20"
+}
+
+###
+POST http://localhost:3000/user/viewLogs
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWNhdGlvbl9ObyI6IjEyMzQ1Iiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjg4MjE5OTIwfQ.i68_ioMepzaBtvSlg95RiLmafPco5tSv0peiCpGTGRw
+Content-Type: application/json
