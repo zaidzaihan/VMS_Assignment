@@ -359,6 +359,10 @@ app.post('/visitor/logout', async function(req, res){
     }
 });
 
+app.get('/', (req, res)=>{
+    res.send("Test deployment");
+});
+
 
 
 app.listen(port, () => {
